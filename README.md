@@ -4,30 +4,45 @@
 https://github.com/Star2Billing/a2billing
 
 
-2. Create a Helm Chart project that boots below servers:
+2. Follow the INSTALL.rst, this guid is design to run the software in a single VM,
+you need to separate the services into 4 Kuberenetes services (Deployments).
+
+Of course you you can also skip the part for "Callback Service"
+
+Create a Kubernete cluster with below deployments
+
+1. `web-customer`: Docker image: php-apache (ingress: http://cluster/customer)
+2. `web-admin`: Docker image: php-apache (ingress: http://cluster/admin)
+3. `sip-server`: Dockerize asterisk asterisk (ingress:  sip://cluster TCP/UDP 5060)
+4. `db-server`: mysql 
+5. `phpmyadmin`: phpMyAdmin (ingress: http://cluster/phpmyadmin)
+
+Note for the Asterisk: you can use CHAN_SIP which is the legacy asterisk module for SIP Server and can configure with `sip.conf` 
+and it is recommended to use asterisk 11 to 13 for above (It's OLD!)
+
+Note for PHP: requested php version is 5, but it should also work php 7.x 
+
+3. Test customer portal : try to register when navigating to customer 
+
+4. Test admin portal : you must be able to login and see the customer you just registered
+
+5. (Nice to do) Add CI/CD  Pipeline (You can choose Azure or Gitlab) for automatic testing and automatic deployment
+
+6. (Nice do do) Once your cluster is up and running, you must be able to use the client you have registered
+register with a SIP client softphone to your asterisk on port 5060.
+
+- For Windows you can use MicroSIP from https://www.microsip.org/
+- For linux/mac you can use [Jitsi](https://jitsi.org/downloads/)
+
+if it works, dialing 77 should announce your credit. provided you have modified extensions.conf to below:
+
 ```
-traefik  (TCP 80) that routes /customer to and /admin
-asterisk (TCP/UDP 5060)
-web-customer docker image: php-apache (/customer)
-web-admin    docker image: php-apache (/admin)
-mysql or mariadb
+
+[a2billing]
+include => a2billing_callingcard
+include => a2billing_monitoring
+include => a2billing_voucher
+
 ```
-you can create a `bootstrap.sh` that boots the project.
 
 Share the result with user: mason-chase on GitHub in private mode.
-
-
-Typically this task could take 3 to 6 hours for someone who doesn't know about Asterisk
-or SIP protocol.
-
-
-A2billing has its installation guide in INSTALL.rst,
-
-you can use it as a reference to create a Docker-compose file.
-
-
-Use MicroSIP from https://www.microsip.org/
-and dial 77 , you should get user's credit balance
-
-
-3. Add Pipeline (You can choose Azure or Gitlab) for automatic testing and automatic deployment
