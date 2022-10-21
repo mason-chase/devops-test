@@ -9,13 +9,15 @@ you need to separate the services into 4 Kuberenetes services (Deployments).
 
 Of course you you can also skip the part for "Callback Service"
 
-Create a Kubernete cluster with below deployments
+Create a helm chart called a2billing with below deployments
 
 1. `web-customer`: Docker image: php-apache (ingress: http://cluster/customer)
 2. `web-admin`: Docker image: php-apache (ingress: http://cluster/admin)
 3. `sip-server`: Dockerize asterisk asterisk (ingress:  sip://cluster TCP/UDP 5060)
-4. `db-server`: mysql 
-5. `phpmyadmin`: phpMyAdmin (ingress: http://cluster/phpmyadmin)
+
+Create a second helm chart with deployments
+1. `db-server`: mysql 
+2. `phpmyadmin`: phpMyAdmin (ingress: http://cluster/phpmyadmin)
 
 Note for the Asterisk: you can use CHAN_SIP which is the legacy asterisk module for SIP Server and can configure with `sip.conf` 
 and it is recommended to use asterisk 11 to 13 for above (It's OLD!)
