@@ -5,7 +5,7 @@ https://github.com/Star2Billing/a2billing
 
 
 2. Follow the INSTALL.rst, this guid is design to run the software in a single VM,
-you need to separate the services into 4 Kuberenetes services (Deployments).
+you need to separate the services into 5 Kuberenetes services in two helm charts as below (Deployments).
 
 Of course you you can also skip the part for "Callback Service"
 
