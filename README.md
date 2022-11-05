@@ -3,7 +3,7 @@
 ## Must do:
 
 1. GitOps Principles
-2. Boostrap scrip
+2. Boostrap script
 3. Document your solution
 ## Steps
 1. Please create a git repository and add the below repository as a git submodule,
