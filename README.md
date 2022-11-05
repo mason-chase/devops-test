@@ -36,6 +36,9 @@ register with a SIP client softphone to your asterisk on port 5060.
 - For Windows you can use MicroSIP from https://www.microsip.org/
 - For linux/mac you can use [Jitsi](https://jitsi.org/downloads/)
 
+7. We expect to see a single bash script or ansible to bootstrap the build/deployment process for locally execution of the assignment in
+minimkube or kind environment.
+
 if it works, dialing 77 should announce your credit. provided you have modified extensions.conf to below:
 
 ```
