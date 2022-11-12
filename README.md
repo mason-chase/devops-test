@@ -6,7 +6,8 @@
 2. Boostrap script
 3. Document your solution
 ## Steps
-1. Please create a git repository and add the below repository as a git submodule,
+
+1. Please clone this repository into a new private github repository and add below repository as a git submodule,
 https://github.com/Star2Billing/a2billing
 
 
@@ -56,4 +57,4 @@ include => a2billing_voucher
 
 ```
 
-Share the result with user: mason-chase on GitHub in private mode.
+Share the result with user: `mason-chase` on GitHub in private mode.
