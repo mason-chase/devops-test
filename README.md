@@ -2,9 +2,10 @@
 
 ## Must do:
 
-1. GitOps Principles
-2. Boostrap script
+1. [GitOps Principles](https://en.wikipedia.org/wiki/DevOps#GitOps)
+2. Boostrap script or Ansible Code
 3. Document your solution
+
 ## Steps
 
 1. Please clone this repository into a new private github repository and add below repository as a git submodule,
