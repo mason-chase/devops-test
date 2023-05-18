@@ -10,7 +10,7 @@
 
 1. Createa Terraform script that bootstrap a 3 nodes OpenShift clusters on Vagrant
 2. Setup a OpenEDX application in a kuberenete cluster that is deployed on the OpenShift cluster
-3. Create a gitlab CI/CD pipeline that commits to openEdx source code is automatically deployed to the cluster using FluxCD
+3. Create a gitlab CI/CD pipeline that commits to openEdx source code is automatically deployed to the cluster using FluxCD, ArgoCD or any other solution you are familiar
 
 ### 1. Terraform and OpenShift:
 
