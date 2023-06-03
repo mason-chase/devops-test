@@ -18,6 +18,8 @@
 - Set up a Kubernetes cluster on the OpenShift cluster created in the previous step.
 - Deploy an OpenEDX application on the Kubernetes cluster. This should include setting up the necessary pods, services, and any required persistent storage.
 - Test the application to ensure it is running correctly on the Kubernetes cluster.
+- You can use Kubespray script to install a 3 worker nodes cluster + 1 control plane
+- You are allowed to use Vagrant or similar script to boot the cluster.
 
 ### 2. GitLab CI/CD Pipeline with FluxCD  (Nice to do):
 
@@ -34,4 +36,5 @@
 
 
 ## Delivery
+- Must have a single execution script/file that we can bootstrap and review your result in a clean Ubuntu server in our environment
 - Clone/copy this repository into a new Github repository and add your result, then share the result with user: `mason-chase` on GitHub in private mode.
