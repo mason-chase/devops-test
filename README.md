@@ -23,7 +23,7 @@
 2. Create a CI/CD Azure Pipeline in yaml format in the root project.
 
 ## Delivery
-- You will be given a VPS running Ubuntu 20, you must be able deploy and with single command line on this VPS.
+- You will be given a VPS running Ubuntu 22, you must be able deploy and with single command line on this VPS.
 - You must plan your code in such way that if we erase the VPS and start over, we must arrive at the same state that you intended.
 - We must be able to navigate to `https://candidate-name.domain.com/dbadmin` and observe PhpMyAdmin UI and it must work
 - WordPress must be available at `http://candidate-name.domain.com/wordpress`
