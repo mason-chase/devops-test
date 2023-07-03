@@ -29,4 +29,3 @@
 - WordPress must be available at `https://candidate-name.domain.com/wordpress`
 - Must have a single execution script/file that we can bootstrap and review your result in a clean Ubuntu server in our environment
 - Clone/copy this repository into a new Github repository and add your result, then share the result with user: `mason-chase` on GitHub in private mode.
-- Share video using Google Drive Link within `readme.md` file
