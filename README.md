@@ -8,7 +8,7 @@
 ## Requirements and Step
 
 
-1. Setup a Kubernete cluster on a single node (CP + Worker) using Kubespray
+1. Setup a Kubernetes cluster on a single node (CP + Worker) using Kubespray
 2. Create a Helm Chart that bootstraps a Wordpress application with MySQL and PhpMyAdmin ingress
 
 - Wordpress Ingress
