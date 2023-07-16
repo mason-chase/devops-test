@@ -15,8 +15,6 @@
 - MySQL Deployment
 - PhpMyAdmin has an Ingress
 
-3. Create a demo video that execute your final test result on a clean Ubuntu machine
-
 ## Nice to do
 
 1. Create a Terraform script for Kubernete cluster
