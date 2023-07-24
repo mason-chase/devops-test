@@ -17,7 +17,7 @@
 
 ## Nice to do
 
-1. Create a Terraform script for Kubernete cluster
+1. Create a Terraform script for Kubernetes cluster
 2. Create a CI/CD Azure Pipeline in yaml format in the root project.
 
 ## Delivery
