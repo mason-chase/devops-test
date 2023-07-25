@@ -2,7 +2,7 @@
 
 ## Must do:
 
-1. [GitOps Principles](https://en.wikipedia.org/wiki/DevOps#GitOps)
+1. [GitOps Principles](https://en.wikipedia.org/wiki/DevOps#GitOps)[Explainer Video](https://www.youtube.com/watch?v=f5EpcWp0THw)
 2. Document your solution
 
 ## Requirements and Step
