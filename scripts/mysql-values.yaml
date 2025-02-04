@@ -1,0 +1,14 @@
+commonAnnotations: 
+  app: wordpress
+  created-by: "sajjad hosseinzadeh"
+volumePermissions:
+  enabled: true
+persistence:
+  enabled: true
+  storageClass: "manual"
+  size: 10Gi
+auth:
+  rootPassword: admin
+  database: wordpressdb
+  username: admin
+  password: admin

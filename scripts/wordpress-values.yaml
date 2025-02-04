@@ -1,0 +1,17 @@
+wordpressUsername: admin
+wordpressPassword: admin
+wordpressEmail: sajjad@example.com
+wordpressFirstName: Sajjad
+wordpressLastName: Hosseinzadeh
+wordpressBlogName: Sajjad Blog
+commonAnnotations: 
+  app: wordpress
+  created-by: "sajjad hosseinzadeh"
+volumePermissions:
+  enabled: true
+mariadb:
+  auth:
+    rootPassword: admin
+    database: wordpressdb
+    username: admin
+    password: admin

@@ -1,0 +1,6 @@
+commonAnnotations: 
+  app: wordpress
+  created-by: "sajjad hosseinzadeh"
+auth:
+  username: admin
+  password: admin
