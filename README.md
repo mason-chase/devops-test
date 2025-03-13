@@ -1,29 +1,68 @@
-# DevOps Test
+# DevOps CI/CD Test with FluxCD with .NET Back-end and Front-end
 
-## Must do:
+## Objectives
+- **Evaluate GitOps Proficiency:** Demonstrate how you leverage FluxCD to automate deployments directly from a Git repository.
+- **Kubernetes & Helm Expertise:** Deploy a .NET full-stack application (Blazor Workshop) on a single-node Kubernetes cluster.
+- **CI/CD Pipeline:** Implement an end-to-end CI/CD process: CI: GitLab and CD: FluxCD.
 
-1. [GitOps Principles](https://en.wikipedia.org/wiki/DevOps#GitOps) [Explainer Video](https://www.youtube.com/watch?v=f5EpcWp0THw)
-2. Document your solution
+## Must Do
 
-## Requirements and Step
+1. **Understand GitOps Principles**  
+   - Review the [GitOps Principles](https://en.wikipedia.org/wiki/DevOps#GitOps) and watch this [Explainer Video](https://www.youtube.com/watch?v=f5EpcWp0THw).  
+   - Document your understanding and describe how these principles are applied in your solution.
 
+2. **Kubernetes Cluster Setup**  
+   - Use **Kubespray** to provision a Kubernetes cluster on a single node (acting as both control plane and worker) on an Ubuntu 22 VPS.
+   - Optionally, deploy GitLab (or another Docker container host) on the same VPS if needed.
 
-1. Setup a Kubernetes cluster on a single node (CP + Worker) using Kubespray
-2. Create a Helm Chart that bootstraps a WordPress application with MySQL and PhpMyAdmin ingress
+3. **FluxCD Integration for CI/CD**  
+   - Install and configure **FluxCD** on your Kubernetes cluster.
+   - Connect FluxCD to a Git repository where all your deployment configurations—including Helm charts—reside.
+   - Ensure that any change pushed to this repository is automatically synchronized and deployed on the cluster.
 
-- WordPress Ingress
-- MySQL Deployment
-- PhpMyAdmin has an Ingress
+4. **Helm Chart Deployment**  
+   - Develop a **Helm Chart** that bootstraps the **Blazor Workshop** application from [https://github.com/dotnet-presentations/blazor-workshop](https://github.com/dotnet-presentations/blazor-workshop).  
+     - The application should deploy both its back-end and single-page front-end components.
+   - Configure **Ingress** resources so that the Blazor Workshop application is accessible at:  
+     `https://candidate-name.maxtld.dev/frontend`
+   - Configure **Ingress** resources so that the Backend Workshop application is accessible at:  
+     `https://candidate-name.maxtld.dev/endpoints` with 
+   - **Sentry Integration:**  
+     - Deploy the Sentry Helm chart to set up Sentry for error tracking.
+     - Integrate source mapping from the Blazor Workshop application to Sentry to facilitate improved error diagnosis.
 
-## Nice to do
+## Delivery Criteria
 
-1. Create a Terraform script for the Kubernetes cluster
-2. Create a CI/CD Azure Pipeline in YAML format in the root project.
+1. **Infrastructure as Code with Terraform**  
+   - Create a Terraform script that automates the provisioning of the Kubernetes cluster.
 
-## Delivery
-1. You will be given a VPS running Ubuntu 22, you must be able to deploy with the single command line on this VPS.
-2. You must plan your code in such a way that if we erase the VPS and start over, we must arrive at the same state that you intended.
-3. Must have a single execution script/file that we can bootstrap and review your result in a clean Ubuntu server in our environment
-4. Clone/copy this repository into a new GitHub repository and add your result, then share the result with user: `mason-chase` on GitHub in private mode.
-5. We must be able to navigate to `https://candidate-name.maxtld.dev/dbadmin` and observe PhpMyAdmin UI and it must work
-6. WordPress must be available at `https://candidate-name.maxtld.dev/wordpress`
+2. **Additional CI/CD Enhancements**  
+   - While FluxCD is the core tool, feel free to add supplementary CI/CD pipeline configurations or scripts as needed.
+
+## Delivery Requirements
+
+1. **Single Command Deployment**  
+   - Provide a single execution script/file that bootstraps your entire environment—including cluster setup, FluxCD installation, and application deployment. This script must work on a clean Ubuntu 22 VPS.
+   
+2. **Idempotency**  
+   - Ensure that if the VPS is erased and the script is re-run, the cluster and applications are re-provisioned to the intended state without any manual intervention.
+
+3. **Repository and Access**  
+   - Clone or copy this repository into a new private GitHub repository (Do not fork)
+   - Add your complete solution and share it with the GitHub user `mason-chase`.
+   - Create Pull Request and assign to the user `mason-chase`
+
+4. **Verification**  
+   - After deployment, verify that:
+     - Navigating to `https://candidate-name.maxtld.dev/frontend` displays the Blazor Workshop application and it functions correctly.
+     - Sentry is operational with proper error tracking and source mapping enabled.
+
+5. **Documentation**  
+   - Provide clear documentation of your solution, detailing:
+     - The setup and configuration of FluxCD and the GitOps workflow.
+     - How Sentry is deployed and integrated with source mapping.
+     - Any additional enhancements or configurations implemented.
+
+## Nice to do 
+
+- **Sentry Integration:** Incorporate error tracking with Sentry, including source mapping for enhanced debugging. `https://candidate-name.maxtld.dev/sentry`
