@@ -28,7 +28,7 @@
    - Configure **Ingress** resources so that the Backend Workshop application is accessible at:  
      `https://candidate-name.maxtld.dev/endpoints` with 
    - **Sentry Integration:**  
-     - Deploy the Sentry Helm chart to set up Sentry for error tracking.
+     - Register a free trial account on [Sentry](https://sentry.io/signup/?plan=am1_f&period=annual) and integrate the application.
      - Integrate source mapping from the Blazor Workshop application to Sentry to facilitate improved error diagnosis.
 
 ## Delivery Criteria
